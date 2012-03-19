@@ -186,7 +186,7 @@ public class Main {
 						writer.setWriteAttributesOnNewLine(true);
 
 						AggregateMarshaller marshaller = new AggregateMarshaller();
-						marshaller.setConversion(new MyFincaneStringConversion());
+						marshaller.setConversion(new MyFinanceStringConversion());
 						marshaller.marshal(envelope, writer);
 
 						writer.flush();
