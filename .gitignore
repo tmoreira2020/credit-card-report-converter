@@ -1,0 +1,7 @@
+.classpath
+.project
+.settings
+fatura-cartao-amex.txt
+fatura-cartao-mastercard.txt
+fatura-cartao-visa.txt
+target
