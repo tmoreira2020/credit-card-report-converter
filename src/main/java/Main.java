@@ -115,7 +115,7 @@ public class Main {
 
 								transactions.add(transaction);
 							}
-							pattern = Pattern.compile("X\\s*(\\d+\\.\\d\\d\\d\\d) =");
+							pattern = Pattern.compile("X\\s*(\\d+\\.\\d\\d\\d?\\d?) =");
 							matcher = pattern.matcher(line);
 							while (matcher.find()) {
 								exchangeRate = Float.parseFloat(matcher.group(1));
@@ -172,9 +172,9 @@ public class Main {
 					envelope.setMessageSets(messageSets);
 
 					System.out.println(creditCardAccountDetails.getAccountKey());
-					System.out.println("TOTAL EM RS" + x);
-					System.out.println("TOTAL EM US" + y);
-					System.out.println("TOTAL EM US+RS" + (y*exchangeRate));
+					System.out.println("TOTAL EM RS " + x);
+					System.out.println("TOTAL EM US " + y);
+					System.out.println("TOTAL FATURA EM RS " + (y*exchangeRate + x));
 					System.out.println();
 
 					if (!transactions.isEmpty()) {
