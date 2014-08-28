@@ -51,7 +51,7 @@ public class Main {
 				if (input.exists()) {
 					List<String> lines = IOUtils.readLines(new FileInputStream(input), "ISO-8859-1");
 
-					Parser parser = new ThiagoParser();
+					Parser parser = new DefaultParser();
 
 					List<Transaction> transactions = parser.parse(lines);
 

@@ -13,7 +13,7 @@ import net.sf.ofx4j.domain.data.common.Transaction;
 import net.sf.ofx4j.domain.data.common.TransactionType;
 
 
-public class ThiagoParser extends AbstractParser {
+public class DefaultParser extends AbstractParser {
 
 	protected NumberFormat formatter = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
 	protected DateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");  
