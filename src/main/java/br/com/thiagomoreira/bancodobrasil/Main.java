@@ -1,12 +1,11 @@
-package br.com.thiagomoreira.bancodobrasil;
 /**
- * Copyright (c) 2012 Thiago Leão Moreira. All rights reserved.
+ * Copyright (C) 2014 Thiago Moreira (tmoreira2020@gmail.com)
  *
- * Licensed under the LGPL License, Version 3.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.gnu.org/licenses/gpl-3.0.html
+ *         http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,6 +13,7 @@ package br.com.thiagomoreira.bancodobrasil;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package br.com.thiagomoreira.bancodobrasil;
 
 import java.io.File;
 import java.io.FileInputStream;
