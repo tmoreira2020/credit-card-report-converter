@@ -23,10 +23,10 @@ public class ThiagoParser extends AbstractParser {
 
 		for (String line : lines) {
 			if (line.trim().length() != 0) {
-				Pattern pattern = Pattern.compile("(\\d\\d/\\d\\d/\\d\\d) (.{38}) ((\\w|\\s){3}) ((\\s)*-?(\\.|\\d)*,\\d\\d) ((\\s)*-?(\\.|\\d)*,\\d\\d)");
+				Pattern pattern = Pattern.compile("(\\d\\d/\\d\\d)    (.{38}) ((\\w|\\s){3}) ((\\s)*-?(\\.|\\d)*,\\d\\d) ((\\s)*-?(\\.|\\d)*,\\d\\d)");
 				Matcher matcher = pattern.matcher(line);
 				while (matcher.find()) {
-					Date date = dateFormat.parse(matcher.group(1));
+					Date date = dateFormat.parse(matcher.group(1)+ "/14");
 					String description = matcher.group(2);
 					String amountInReals = matcher.group(5).trim();
 					String amountInDollars = matcher.group(8).trim();
