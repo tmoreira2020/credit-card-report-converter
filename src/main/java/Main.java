@@ -45,6 +45,7 @@ public class Main {
 	 */
 	public static void main(String[] args) throws Exception {
 		if (args != null) {
+			double total = 0;
 			for (String arg : args) {
 				File input = new File(arg);
 				if (input.exists()) {
@@ -89,10 +90,15 @@ public class Main {
 					envelope.setSecurity(ApplicationSecurity.NONE);
 					envelope.setMessageSets(messageSets);
 
+					double brazilianRealsamount = parser.getBrazilianRealsAmount();
+					double dolarsAmount = parser.getDolarsAmount();
+					double cardTotal = dolarsAmount*parser.getExchangeRate() + brazilianRealsamount;
+					total+= cardTotal;
+
 					System.out.println(creditCardAccountDetails.getAccountKey());
-					System.out.println("TOTAL EM RS " + parser.getBrazilianRealsAmount());
-					System.out.println("TOTAL EM US " + parser.getDolarsAmount());
-					System.out.println("TOTAL FATURA EM RS " + (parser.getDolarsAmount()*parser.getExchangeRate() + parser.getBrazilianRealsAmount()));
+					System.out.println("TOTAL EM RS " + brazilianRealsamount);
+					System.out.println("TOTAL EM US " + dolarsAmount);
+					System.out.println("TOTAL FATURA EM RS " + cardTotal);
 					System.out.println();
 
 					if (!transactions.isEmpty()) {
@@ -113,6 +119,7 @@ public class Main {
 					}
 				}
 			}
+			System.out.println("TOTAL FATURAS EM RS " + total);
 		}
 
 	}
