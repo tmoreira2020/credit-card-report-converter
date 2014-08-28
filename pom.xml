@@ -39,7 +39,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>Main</mainClass>
+					<mainClass>br.com.thiagomoreira.bancodobrasil.Main</mainClass>
 					<arguments>
 						<argument>fatura-cartao-amex.txt</argument>
 						<argument>fatura-cartao-mastercard.txt</argument>

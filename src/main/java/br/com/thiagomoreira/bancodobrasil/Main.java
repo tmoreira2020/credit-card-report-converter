@@ -1,3 +1,4 @@
+package br.com.thiagomoreira.bancodobrasil;
 /**
  * Copyright (c) 2012 Thiago Leão Moreira. All rights reserved.
  *

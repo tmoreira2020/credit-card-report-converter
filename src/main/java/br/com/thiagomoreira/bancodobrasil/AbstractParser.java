@@ -1,3 +1,4 @@
+package br.com.thiagomoreira.bancodobrasil;
 import java.util.Date;
 
 public abstract class AbstractParser implements Parser {

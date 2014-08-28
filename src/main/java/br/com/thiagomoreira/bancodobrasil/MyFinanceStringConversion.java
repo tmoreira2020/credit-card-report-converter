@@ -1,3 +1,4 @@
+package br.com.thiagomoreira.bancodobrasil;
 import java.text.NumberFormat;
 
 import net.sf.ofx4j.io.DefaultStringConversion;
