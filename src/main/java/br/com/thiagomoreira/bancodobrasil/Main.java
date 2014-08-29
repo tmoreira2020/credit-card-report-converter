@@ -18,7 +18,9 @@ package br.com.thiagomoreira.bancodobrasil;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.UUID;
@@ -46,7 +48,13 @@ public class Main {
 	 */
 	public static void main(String[] args) throws Exception {
 		if (args != null) {
+			NumberFormat formatter = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
+
+			formatter.setMaximumFractionDigits(2);
+			formatter.setMinimumFractionDigits(2);
+
 			double total = 0;
+
 			for (String arg : args) {
 				File input = new File(arg);
 				if (input.exists()) {
@@ -97,9 +105,9 @@ public class Main {
 					total+= cardTotal;
 
 					System.out.println(creditCardAccountDetails.getAccountKey());
-					System.out.println("TOTAL EM RS " + brazilianRealsamount);
-					System.out.println("TOTAL EM US " + dolarsAmount);
-					System.out.println("TOTAL FATURA EM RS " + cardTotal);
+					System.out.println("TOTAL EM RS " + formatter.format(brazilianRealsamount));
+					System.out.println("TOTAL EM US " + formatter.format(dolarsAmount));
+					System.out.println("TOTAL FATURA EM RS " + formatter.format(cardTotal));
 					System.out.println();
 
 					if (!transactions.isEmpty()) {
@@ -120,7 +128,7 @@ public class Main {
 					}
 				}
 			}
-			System.out.println("TOTAL FATURAS EM RS " + total);
+			System.out.println("TOTAL FATURAS EM RS " + formatter.format(total));
 		}
 
 	}
