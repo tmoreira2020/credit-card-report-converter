@@ -29,6 +29,7 @@
 	<name>Credit Card Report Converter</name>
 	<description>This small application converts a Banco do Brasil credit card report in the txt format to ofx format.</description>
 	<url>http://www.thiagomoreira.com.br/projects/credit-card-report-converter</url>
+	<inceptionYear>2012</inceptionYear>
 	<scm>
 		<url>https://github.com/tmoreira2020/credit-card-report-converter</url>
 		<connection>scm:git:git@github.com:tmoreira2020/credit-card-report-converter.git</connection>
