@@ -25,7 +25,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.thiagomoreira.bancodobrasil</groupId>
 	<artifactId>credit-card-report-converter</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>0.1-SNAPSHOT</version>
 	<name>Credit Card Report Converter</name>
 	<description>This small application converts a Banco do Brasil credit card report in the txt format to ofx format.</description>
 	<url>http://www.thiagomoreira.com.br/projects/credit-card-report-converter</url>
