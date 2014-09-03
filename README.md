@@ -1,5 +1,7 @@
 Credit Card Report Converter
 ==========
+[![Build Status](https://travis-ci.org/tmoreira2020/credit-card-report-converter.svg?branch=master)](https://travis-ci.org/tmoreira2020/credit-card-report-converter)
+
 Credit Card Report Converter is a small application that converts a Banco do Brasil credit card report in the txt format to ofx format.
 
 ### License

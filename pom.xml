@@ -35,6 +35,10 @@
 		<developerConnection>scm:git:git@github.com:tmoreira2020/credit-card-report-converter.git</developerConnection>
 	  <tag>HEAD</tag>
   </scm>
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/tmoreira2020/credit-card-report-converter</url>
+	</ciManagement>
 	<dependencies>
 		<dependency>
 			<groupId>commons-io</groupId>
