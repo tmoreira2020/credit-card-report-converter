@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package br.com.thiagomoreira.bancodobrasil;
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 
 import net.sf.ofx4j.io.DefaultStringConversion;
@@ -23,7 +24,7 @@ public class MyFinanceStringConversion extends DefaultStringConversion {
 
 	@Override
 	public String toString(Object value) {
-		if (value instanceof Double) {
+		if (value instanceof BigDecimal) {
 			NumberFormat numberFormat = NumberFormat.getNumberInstance();
 			numberFormat.setMaximumFractionDigits(2);
 			return numberFormat.format(value);
