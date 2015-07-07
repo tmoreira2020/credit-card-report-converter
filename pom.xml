@@ -45,7 +45,7 @@
 		<url>https://github.com/tmoreira2020/credit-card-report-converter/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>travis-ci</system>
+		<system>Travis</system>
 		<url>https://travis-ci.org/tmoreira2020/credit-card-report-converter</url>
 	</ciManagement>
 
