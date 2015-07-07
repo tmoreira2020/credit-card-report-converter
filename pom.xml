@@ -27,7 +27,7 @@
 
 	<groupId>br.com.thiagomoreira.bancodobrasil</groupId>
 	<artifactId>credit-card-report-converter</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<name>Credit Card Report Converter</name>
 	<description>This small application converts a Banco do Brasil credit card report in the txt format to ofx format.</description>
@@ -38,7 +38,7 @@
 		<url>https://github.com/tmoreira2020/credit-card-report-converter</url>
 		<connection>scm:git:git@github.com:tmoreira2020/credit-card-report-converter.git</connection>
 		<developerConnection>scm:git:git@github.com:tmoreira2020/credit-card-report-converter.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>credit-card-report-converter-1.0.0</tag>
 	</scm>
 	<issueManagement>
 		<system>Github</system>
