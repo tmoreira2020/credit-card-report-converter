@@ -19,7 +19,6 @@ import java.text.NumberFormat;
 
 import net.sf.ofx4j.io.DefaultStringConversion;
 
-
 public class MyFinanceStringConversion extends DefaultStringConversion {
 
 	@Override

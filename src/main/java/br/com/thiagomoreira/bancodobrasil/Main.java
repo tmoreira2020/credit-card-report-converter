@@ -40,7 +40,6 @@ import net.sf.ofx4j.io.v1.OFXV1Writer;
 
 import org.apache.commons.io.IOUtils;
 
-
 public class Main {
 
 	/**
@@ -48,7 +47,8 @@ public class Main {
 	 */
 	public static void main(String[] args) throws Exception {
 		if (args != null) {
-			NumberFormat formatter = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
+			NumberFormat formatter = NumberFormat.getNumberInstance(new Locale(
+					"pt", "BR"));
 
 			formatter.setMaximumFractionDigits(2);
 			formatter.setMinimumFractionDigits(2);
@@ -58,7 +58,8 @@ public class Main {
 			for (String arg : args) {
 				File input = new File(arg);
 				if (input.exists()) {
-					List<String> lines = IOUtils.readLines(new FileInputStream(input), "ISO-8859-1");
+					List<String> lines = IOUtils.readLines(new FileInputStream(
+							input), "ISO-8859-1");
 
 					Parser parser = new DefaultParser();
 
@@ -71,25 +72,30 @@ public class Main {
 
 					CreditCardAccountDetails creditCardAccountDetails = new CreditCardAccountDetails();
 					creditCardAccountDetails.setAccountNumber("7616-3");
-					creditCardAccountDetails.setAccountKey(parser.getAccountKey());
-							
+					creditCardAccountDetails.setAccountKey(parser
+							.getAccountKey());
+
 					CreditCardStatementResponse creditCardStatementResponse = new CreditCardStatementResponse();
-					creditCardStatementResponse.setAccount(creditCardAccountDetails);
+					creditCardStatementResponse
+							.setAccount(creditCardAccountDetails);
 					creditCardStatementResponse.setCurrencyCode("BRL");
-					creditCardStatementResponse.setTransactionList(transactionList);
+					creditCardStatementResponse
+							.setTransactionList(transactionList);
 
 					Status status = new Status();
 					status.setCode(Status.KnownCode.SUCCESS);
 					status.setSeverity(Status.Severity.INFO);
 
 					CreditCardStatementResponseTransaction statementResponse = new CreditCardStatementResponseTransaction();
-					statementResponse.setClientCookie(UUID.randomUUID().toString());
+					statementResponse.setClientCookie(UUID.randomUUID()
+							.toString());
 					statementResponse.setStatus(status);
 					statementResponse.setUID(UUID.randomUUID().toString());
 					statementResponse.setMessage(creditCardStatementResponse);
 
 					CreditCardResponseMessageSet creditCardResponseMessageSet = new CreditCardResponseMessageSet();
-					creditCardResponseMessageSet.setStatementResponse(statementResponse);
+					creditCardResponseMessageSet
+							.setStatementResponse(statementResponse);
 
 					SortedSet<ResponseMessageSet> messageSets = new TreeSet<ResponseMessageSet>();
 					messageSets.add(creditCardResponseMessageSet);
@@ -99,19 +105,26 @@ public class Main {
 					envelope.setSecurity(ApplicationSecurity.NONE);
 					envelope.setMessageSets(messageSets);
 
-					double brazilianRealsamount = parser.getBrazilianRealsAmount();
+					double brazilianRealsamount = parser
+							.getBrazilianRealsAmount();
 					double dolarsAmount = parser.getDolarsAmount();
-					double cardTotal = dolarsAmount*parser.getExchangeRate() + brazilianRealsamount;
-					total+= cardTotal;
+					double cardTotal = dolarsAmount * parser.getExchangeRate()
+							+ brazilianRealsamount;
+					total += cardTotal;
 
-					System.out.println(creditCardAccountDetails.getAccountKey());
-					System.out.println("TOTAL EM RS " + formatter.format(brazilianRealsamount));
-					System.out.println("TOTAL EM US " + formatter.format(dolarsAmount));
-					System.out.println("TOTAL FATURA EM RS " + formatter.format(cardTotal));
+					System.out
+							.println(creditCardAccountDetails.getAccountKey());
+					System.out.println("TOTAL EM RS "
+							+ formatter.format(brazilianRealsamount));
+					System.out.println("TOTAL EM US "
+							+ formatter.format(dolarsAmount));
+					System.out.println("TOTAL FATURA EM RS "
+							+ formatter.format(cardTotal));
 					System.out.println();
 
 					if (!transactions.isEmpty()) {
-						String parent = System.getProperty("user.home") + "/Downloads";
+						String parent = System.getProperty("user.home")
+								+ "/Downloads";
 						String fileName = arg.replace(".txt", ".ofx");
 						File output = new File(parent, fileName);
 						FileOutputStream fos = new FileOutputStream(output);
@@ -120,7 +133,8 @@ public class Main {
 						writer.setWriteAttributesOnNewLine(true);
 
 						AggregateMarshaller marshaller = new AggregateMarshaller();
-						marshaller.setConversion(new MyFinanceStringConversion());
+						marshaller
+								.setConversion(new MyFinanceStringConversion());
 						marshaller.marshal(envelope, writer);
 
 						writer.flush();
@@ -128,7 +142,8 @@ public class Main {
 					}
 				}
 			}
-			System.out.println("TOTAL FATURAS EM RS " + formatter.format(total));
+			System.out
+					.println("TOTAL FATURAS EM RS " + formatter.format(total));
 		}
 
 	}

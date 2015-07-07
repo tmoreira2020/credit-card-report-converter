@@ -30,7 +30,7 @@ public interface Parser {
 	public abstract Date getEndDate();
 
 	public abstract float getExchangeRate();
-	
+
 	public abstract Date getStartDate();
 
 	public abstract List<Transaction> parse(List<String> lines)
