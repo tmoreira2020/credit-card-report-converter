@@ -19,7 +19,7 @@
 	<parent>
 		<groupId>br.com.thiagomoreira</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.1</version>
+		<version>0.9</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.thiagomoreira.bancodobrasil</groupId>
@@ -27,7 +27,7 @@
 	<version>0.2-SNAPSHOT</version>
 	<name>Credit Card Report Converter</name>
 	<description>This small application converts a Banco do Brasil credit card report in the txt format to ofx format.</description>
-	<url>http://www.thiagomoreira.com.br/projects/credit-card-report-converter</url>
+	<url>https://www.thiagomoreira.com.br/projects/credit-card-report-converter</url>
 	<inceptionYear>2012</inceptionYear>
 	<scm>
 		<url>https://github.com/tmoreira2020/credit-card-report-converter</url>
@@ -56,7 +56,6 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.3.2</version>
 				<executions>
 					<execution>
 						<goals>
