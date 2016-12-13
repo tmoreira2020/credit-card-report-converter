@@ -26,6 +26,7 @@ public class MyFinanceStringConversion extends DefaultStringConversion {
 		if (value instanceof BigDecimal) {
 			NumberFormat numberFormat = NumberFormat.getNumberInstance();
 			numberFormat.setMaximumFractionDigits(2);
+			numberFormat.setGroupingUsed(false);
 			return numberFormat.format(value);
 		}
 		return super.toString(value);
